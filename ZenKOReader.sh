@@ -243,10 +243,18 @@ install_latest_koreader() {
     install_zen_ui_plugin "$tmp_dir"
 }
 
+launch_koreader() {
+    if [ -d "$USB_ROOT/extensions/kual" ]; then
+        "$KOREADER_SH" --kual --framework_stop
+    else
+        "$KOREADER_SH" --framework_stop
+    fi
+}
+
 if [ -f "$KOREADER_SH" ]; then
     install_zen_userpatch quiet
     [ -x "$KOREADER_SH" ] || chmod +x "$KOREADER_SH" 2>/dev/null || true
-    "$KOREADER_SH" --kual --framework_stop
+    launch_koreader
     exit $?
 fi
 
@@ -254,4 +262,4 @@ log "Starting ZenKOReader v$SCRIPT_VERSION."
 install_latest_koreader
 
 [ -x "$KOREADER_SH" ] || chmod +x "$KOREADER_SH" 2>/dev/null || true
-"$KOREADER_SH" --kual --framework_stop
+launch_koreader
