@@ -12,7 +12,7 @@ LOG_FILE="$USB_ROOT/ZenKOReader.log"
 KOREADER_SH="$USB_ROOT/koreader/koreader.sh"
 OTA_SERVER="https://ota.koreader.rocks/"
 KO_CHANNEL="stable"
-ZENOS_URL="https://github.com/AnthonyGress/zen_ui.koplugin/releases/latest/download/zenos.koplugin.zip"
+ZENOS_URL="https://github.com/xZenLabs/zen-os/releases/latest/download/zenos.koplugin.zip"
 
 log() {
     echo
